@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日快乐</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF69B4', // 粉色主色调
+                        secondary: '#87CEEB', // 浅蓝色辅助色
+                        accent1: '#32CD32', // 松鹤延年绿色
+                        accent2: '#FFA500', // 笑口常开橙色
+                        accent3: '#9400D3', // 万事胜意紫色
+                        accent4: '#FF4500', // 财源广进红色
+                        accent5: '#1E90FF', // 蒸蒸日上蓝色
+                        accent6: '#FFD700', // 洪福齐天金色
+                    },
+                    fontFamily: {
+                        sans: ['PingFang SC', 'Microsoft YaHei', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            .animate-float {
+                animation: float 3s ease-in-out infinite;
+            }
+            .animate-float-delay-1 {
+                animation: float 3s ease-in-out 0.5s infinite;
+            }
+            .animate-float-delay-2 {
+                animation: float 3s ease-in-out 1s infinite;
+            }
+            .animate-float-delay-3 {
+                animation: float 3s ease-in-out 1.5s infinite;
+            }
+            .animate-float-delay-4 {
+                animation: float 3s ease-in-out 2s infinite;
+            }
+            .animate-float-delay-5 {
+                animation: float 3s ease-in-out 2.5s infinite;
+            }
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0px); }
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px) scale(1.03);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-300 to-blue-100 min-h-screen flex flex-col items-center justify-center p-4">
+    <!-- 装饰元素 -->
+    <div class="fixed top-0 left-0 w-full overflow-hidden pointer-events-none" style="height: 100px;">
+        <div class="animate-float absolute top-0 left-[5%] text-primary/60 text-4xl">
+            <i class="fa fa-birthday-cake"></i>
+        </div>
+        <div class="animate-float-delay-1 absolute top-0 left-[25%] text-accent3/60 text-3xl">
+            <i class="fa fa-star"></i>
+        </div>
+        <div class="animate-float-delay-2 absolute top-0 left-[45%] text-accent2/60 text-4xl">
+            <i class="fa fa-heart"></i>
+        </div>
+        <div class="animate-float-delay-3 absolute top-0 left-[65%] text-accent4/60 text-3xl">
+            <i class="fa fa-gift"></i>
+        </div>
+        <div class="animate-float-delay-4 absolute top-0 left-[85%] text-accent6/60 text-4xl">
+            <i class="fa fa-diamond"></i>
+        </div>
+    </div>
+
+    <div class="container max-w-3xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12 mt-20 relative overflow-hidden">
+        <!-- 标题区域 -->
+        <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-primary text-center mb-4 text-shadow">
+            生日快乐
+        </h1>
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-semibold text-gray-700 text-center mb-10">
+            祝您<span class="text-primary font-bold">44</span>岁生日快乐
+        </h2>
+
+        <!-- 祝福卡片 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <div class="card-hover bg-gradient-to-br from-accent1/90 to-accent1/70 rounded-xl p-6 text-white shadow-lg">
+                <div class="flex items-center justify-between">
+                    <span class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold">松鹤延年</span>
+                    <i class="fa fa-pagelines text-3xl"></i>
+                </div>
+            </div>
+            
+            <div class="card-hover bg-gradient-to-br from-accent2/90 to-accent2/70 rounded-xl p-6 text-white shadow-lg">
+                <div class="flex items-center justify-between">
+                    <span class="text-[clamp(1.5rem,3vw,2rem)] font-bold">笑口常开</span>
+                    <i class="fa fa-smile-o text-3xl"></i>
+                </div>
+            </div>
+            
+            <div class="card-hover bg-gradient-to-br from-accent3/90 to-accent3/70 rounded-xl p-6 text-white shadow-lg">
+                <div class="flex items-center justify-between">
+                    <span class="text-[clamp(2rem,3vw,3rem)] font-bold">万事胜意</span>
+                    <i class="fa fa-star text-3xl"></i>
+                </div>
+            </div>
+            
+            <div class="card-hover bg-gradient-to-br from-accent4/90 to-accent4/70 rounded-xl p-6 text-white shadow-lg">
+                <div class="flex items-center justify-between">
+                    <span class="text-[clamp(1.3rem,3vw,1.8rem)] font-bold">财源广进</span>
+                    <i class="fa fa-money text-3xl"></i>
+                </div>
+            </div>
+            
+            <div class="card-hover bg-gradient-to-br from-accent5/90 to-accent5/70 rounded-xl p-6 text-white shadow-lg">
+                <div class="flex items-center justify-between">
+                    <span class="text-[clamp(1.3rem,3vw,1.8rem)] font-bold">蒸蒸日上</span>
+                    <i class="fa fa-line-chart text-3xl"></i>
+                </div>
+            </div>
+            
+            <div class="card-hover bg-gradient-to-br from-accent6/90 to-accent6/70 rounded-xl p-6 text-white shadow-lg">
+                <div class="flex items-center justify-between">
+                    <span class="text-[clamp(1.3rem,3vw,1.8rem)] font-bold">洪福齐天</span>
+                    <i class="fa fa-sun-o text-3xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部装饰 -->
+        <div class="absolute -bottom-6 left-0 w-full overflow-hidden pointer-events-none">
+            <div class="animate-float-delay-5 absolute bottom-0 left-[10%] text-primary/60 text-4xl">
+                <i class="fa fa-birthday-cake"></i>
+            </div>
+            <div class="animate-float-delay-4 absolute bottom-0 left-[30%] text-accent3/60 text-3xl">
+                <i class="fa fa-star"></i>
+            </div>
+            <div class="animate-float-delay-3 absolute bottom-0 left-[50%] text-accent2/60 text-4xl">
+                <i class="fa fa-heart"></i>
+            </div>
+            <div class="animate-float-delay-2 absolute bottom-0 left-[70%] text-accent4/60 text-3xl">
+                <i class="fa fa-gift"></i>
+            </div>
+            <div class="animate-float-delay-1 absolute bottom-0 left-[90%] text-accent6/60 text-4xl">
+                <i class="fa fa-diamond"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 添加随机飘落的星星效果
+        function createStars() {
+            const colors = ['#FF69B4', '#87CEEB', '#32CD32', '#FFA500', '#9400D3', '#FF4500'];
+            const starsContainer = document.createElement('div');
+            starsContainer.className = 'fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-50';
+            document.body.appendChild(starsContainer);
+            
+            for (let i = 0; i < 30; i++) {
+                const star = document.createElement('div');
+                const size = Math.random() * 10 + 5;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * 100;
+                const delay = Math.random() * 10;
+                const duration = Math.random() * 20 + 10;
+                
+                star.className = 'absolute';
+                star.innerHTML = '<i class="fa fa-star"></i>';
+                star.style.cssText = `
+                    left: ${left}%;
+                    top: -20px;
+                    color: ${color};
+                    font-size: ${size}px;
+                    opacity: ${Math.random() * 0.5 + 0.5};
+                    animation: falling ${duration}s linear ${delay}s infinite;
+                `;
+                
+                starsContainer.appendChild(star);
+            }
+            
+            // 定义动画
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes falling {
+                    0% { transform: translateY(-20px) rotate(0deg); }
+                    100% { transform: translateY(calc(100vh + 20px)) rotate(360deg); }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // 页面加载后创建星星效果
+        window.addEventListener('load', createStars);
+    </script>
+</body>
+</html>
